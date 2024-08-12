@@ -1,0 +1,19 @@
+{
+  "name": "sistema-de-inventarios",
+  "version": "1.0.0",
+  "description": "Proyecto N°1 - COM350",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Deus-Ex-Umbra/Proyecto-N-1---COM350---Sistema-de-Inventarios.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Deus-Ex-Umbra/Proyecto-N-1---COM350---Sistema-de-Inventarios/issues"
+  },
+  "homepage": "https://github.com/Deus-Ex-Umbra/Proyecto-N-1---COM350---Sistema-de-Inventarios#readme"
+}
