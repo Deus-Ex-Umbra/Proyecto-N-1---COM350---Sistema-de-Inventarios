@@ -50,3 +50,13 @@ export const getItemById = async (req, res) => {
         res.status(500).json({ message: error.message });
     }
 };
+
+export const getItemByProductId = async (req, res) => {
+    try {
+        const id = req.params.id;
+        const item = await itemService.getItemByProductId(id);
+        res.status(200).json(item);
+    } catch (error) {
+        res.status(500).json({ message: error.message });
+    }
+};

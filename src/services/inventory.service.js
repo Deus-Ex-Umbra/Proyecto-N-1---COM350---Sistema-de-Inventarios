@@ -68,12 +68,3 @@ export const getInventoryById = async (id) => {
         throw error;
     }
 };
-
-export const getInventoryByUserId = async (id) => {
-    try {
-        const data = await Inventory.findAll({ where: { id_u: id } });
-        return data;
-    } catch (error) {
-        throw error;
-    }
-};
