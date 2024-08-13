@@ -6,7 +6,6 @@ export const Item = sequelize.define("item", {
     code_item: {
         type: DataTypes.STRING,
         primaryKey: true,
-        autoIncrement: true,
         unique: true
     },
     name: {
@@ -22,7 +21,7 @@ export const Item = sequelize.define("item", {
         type: DataTypes.INTEGER
     },
     id_inv: {
-        type: DataTypes.INTEGER,
+        type: DataTypes.STRING,
         references: {
             model: Product,
             key: "code_inv"

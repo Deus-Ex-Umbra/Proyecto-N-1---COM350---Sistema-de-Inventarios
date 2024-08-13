@@ -1,12 +1,7 @@
-import * as productService from '../services/product.service';
-import { validationResult } from 'express-validator';
+import * as productService from '../services/product.service.js';
 
 export const createProduct = async (req, res) => {
     try {
-        const errors = validationResult(req);
-        if (!errors.isEmpty()) {
-            return res.status(400).json({ errors: errors.array() });
-        }
         const data = req.body;
         const product = await productService.createProduct(data);
         res.status(201).json(product);
@@ -17,10 +12,6 @@ export const createProduct = async (req, res) => {
 
 export const updateProduct = async (req, res) => {
     try {
-        const errors = validationResult(req);
-        if (!errors.isEmpty()) {
-            return res.status(400).json({ errors: errors.array() });
-        }
         const id = req.params.id;
         const data = req.body;
         const product = await productService.updateProduct(id, data);

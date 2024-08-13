@@ -1,8 +1,8 @@
-import { Sequelize } from "../database/database.js";
+import { sequelize } from "../database/database.js";
 import { User } from "../models/user.js";
 
 export const createUser = async (data) => {
-    const transaction = await Sequelize.transaction();
+    const transaction = await sequelize.transaction();
     try {
         const user_data = {
             ci: data.ci,
@@ -21,7 +21,7 @@ export const createUser = async (data) => {
     };
 
     const updateUser = async (id, data) => {
-        const transaction = await Sequelize.transaction();
+        const transaction = await sequelize.transaction();
         try {
             const user_data = {
                 ci: data.ci,
@@ -40,7 +40,7 @@ export const createUser = async (data) => {
     };
     
     const deleteUser = async (id) => {
-        const transaction = await Sequelize.transaction();
+        const transaction = await sequelize.transaction();
         try {
             const data = await User.destroy({ where: { id_user: id } }, { transaction });
             await transaction.commit();

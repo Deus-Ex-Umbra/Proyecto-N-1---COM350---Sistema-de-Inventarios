@@ -1,12 +1,11 @@
 import { DataTypes } from "sequelize";
-import { sequelize } from "../database/database";
+import { sequelize } from "../database/database.js";
 import { Inventory } from "../models/inventory.js";
 
 export const Product = sequelize.define("product", {
     id_product: {
-        type: DataTypes.INTEGER,
+        type: DataTypes.STRING,
         primaryKey: true,
-        autoIncrement: true,
         unique: true
     },
     name: {

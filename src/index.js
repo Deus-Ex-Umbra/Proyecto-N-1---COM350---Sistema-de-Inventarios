@@ -1,11 +1,10 @@
 import express from 'express';
 import morgan from 'morgan';
-import { sequelize } from './database/database';
-import { inventoryRoutes } from './routes/inventory.routes.js';
-import { productRoutes } from './routes/product.routes.js';
-import { itemRoutes } from './routes/item.routes.js';
-import { userRoutes } from './routes/user.routes.js';
-
+import { sequelize } from './database/database.js';
+import inventoryRoutes from './routes/inventory.routes.js';
+import productRoutes from './routes/product.routes.js';
+import itemRoutes from './routes/item.routes.js';
+import userRoutes from './routes/user.routes.js';
 const app = express();
 app.use(morgan('dev'));
 app.use(express.json());

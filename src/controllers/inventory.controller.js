@@ -1,12 +1,7 @@
-import * as inventoryService from '../services/inventory.service';
-import { validationResult } from 'express-validator';
+import * as inventoryService from '../services/inventory.service.js';
 
 export const createInventory = async (req, res) => {
     try {
-        const errors = validationResult(req);
-        if (!errors.isEmpty()) {
-            return res.status(400).json({ errors: errors.array() });
-        }
         const data = req.body;
         const inventory = await inventoryService.createInventory(data);
         res.status(201).json(inventory);
@@ -17,10 +12,6 @@ export const createInventory = async (req, res) => {
 
 export const updateInventory = async (req, res) => {
     try {
-        const errors = validationResult(req);
-        if (!errors.isEmpty()) {
-            return res.status(400).json({ errors: errors.array() });
-        }
         const id = req.params.id;
         const data = req.body;
         const inventory = await inventoryService.updateInventory(id, data);

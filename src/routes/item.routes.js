@@ -1,4 +1,4 @@
-import * as itemController from '../controllers/item.controller';
+import * as itemController from '../controllers/item.controller.js';
 import expres from 'express';
 
 const router = expres.Router();

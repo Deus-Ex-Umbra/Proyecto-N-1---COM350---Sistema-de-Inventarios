@@ -1,4 +1,4 @@
-import * as inventoryController from '../controllers/inventory.controller';
+import * as inventoryController from '../controllers/inventory.controller.js';
 import expres from 'express';
 
 const router = expres.Router();

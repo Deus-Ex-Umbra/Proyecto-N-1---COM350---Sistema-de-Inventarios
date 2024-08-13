@@ -1,12 +1,7 @@
-import * as userService from '../services/user.service';
-import { validationResult } from 'express-validator';
+import * as userService from '../services/user.service.js';
 
 export const createUser = async (req, res) => {
     try {
-        const errors = validationResult(req);
-        if (!errors.isEmpty()) {
-            return res.status(400).json({ errors: errors.array() });
-        }
         const data = req.body;
         const user = await userService.createUser(data);
         res.status(201).json(user);
@@ -17,10 +12,6 @@ export const createUser = async (req, res) => {
 
 export const updateUser = async (req, res) => {
     try {
-        const errors = validationResult(req);
-        if (!errors.isEmpty()) {
-            return res.status(400).json({ errors: errors.array() });
-        }
         const id = req.params.id;
         const data = req.body;
         const user = await userService.updateUser(id, data);

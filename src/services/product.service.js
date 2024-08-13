@@ -1,4 +1,3 @@
-import { DataTypes } from "sequelize";
 import { sequelize } from "../database/database.js";
 import { Product } from "../models/product.js";
 
