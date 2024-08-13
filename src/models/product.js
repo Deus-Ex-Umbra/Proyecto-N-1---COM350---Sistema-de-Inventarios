@@ -18,10 +18,8 @@ export const Product = sequelize.define("product", {
         type: DataTypes.INTEGER
     },
     total_price: {
-        type: DataTypes.DECIMAL
-    },
-    price_unit: {
-        type: DataTypes.DECIMAL
+        type: DataTypes.DECIMAL,
+        defaultValue: 0
     },
     id_inv: {
         type: DataTypes.INTEGER,
@@ -39,7 +37,3 @@ Inventory.hasMany(Product, {
 });
 
 Product.belongsTo(Inventory, { foreignKey: "id_inv" });
-
-Product.beforeCreate((product) => {
-    product.total_price = product.quantity * product.price_unit;
-});

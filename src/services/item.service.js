@@ -11,9 +11,9 @@ export const createItem = async (data) => {
             lote_number: data.lote_number,
             id_inv: data.id_inv
         };
-        const data = await Item.create(item_data, { transaction });
+        const item = await Item.create(item_data, { transaction });
         await transaction.commit();
-        return data;
+        return item;
     } catch (error) {
         await transaction.rollback();
         throw error;
@@ -30,9 +30,9 @@ export const updateItem = async (id, data) => {
             lote_number: data.lote_number,
             id_inv: data.id_inv
         };
-        const data = await Item.update(item_data, { where: { code_item: id } }, { transaction });
+        const item = await Item.update(item_data, { where: { code_item: id } }, { transaction });
         await transaction.commit();
-        return data;
+        return item;
     } catch (error) {
         await transaction.rollback();
         throw error;
@@ -63,6 +63,15 @@ export const getAllItems = async () => {
 export const getItemById = async (id) => {
     try {
         const data = await Item.findByPk(id);
+        return data;
+    } catch (error) {
+        throw error;
+    }
+};
+
+export const getItemByProductId = async (id) => {
+    try {
+        const data = await Item.findAll({ where: { id_inv: id } });
         return data;
     } catch (error) {
         throw error;

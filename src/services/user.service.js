@@ -11,9 +11,9 @@ export const createUser = async (data) => {
             email: data.email,
             password: data.password
         };
-        const data = await User.create(user_data, { transaction });
+        const user = await User.create(user_data, { transaction });
         await transaction.commit();
-        return data; 
+        return user; 
         } catch (error) {
             await transaction.rollback();
             throw error;
@@ -30,9 +30,9 @@ export const createUser = async (data) => {
                 email: data.email,
                 password: data.password
             };
-            const data = await User.update(user_data, { where: { id_user: id } }, { transaction });
+            const user = await User.update(user_data, { where: { id_user: id } }, { transaction });
             await transaction.commit();
-            return data;
+            return user;
         } catch (error) {
             await transaction.rollback();
             throw error;

@@ -11,9 +11,9 @@ export const createInventory = async (data) => {
             total_price: data.total_price,
             id_u: data.id_u
         };
-        const data = await Inventory.create(inventory_data, { transaction });
+        const inventory = await Inventory.create(inventory_data, { transaction });
         await transaction.commit();
-        return data;
+        return inventory;
     } catch (error) {
         await transaction.rollback();
         throw error;
@@ -30,9 +30,9 @@ export const updateInventory = async (id, data) => {
             total_price: data.total_price,
             id_u: data.id_u
         };
-        const data = await Inventory.update(inventory_data, { where: { code_inv: id } }, { transaction });
+        const inventory = await Inventory.update(inventory_data, { where: { code_inv: id } }, { transaction });
         await transaction.commit();
-        return data;
+        return inventory;
     } catch (error) {
         await transaction.rollback();
         throw error;
@@ -63,6 +63,15 @@ export const getAllInventories = async () => {
 export const getInventoryById = async (id) => {
     try {
         const data = await Inventory.findByPk(id);
+        return data;
+    } catch (error) {
+        throw error;
+    }
+};
+
+export const getInventoryByUserId = async (id) => {
+    try {
+        const data = await Inventory.findAll({ where: { id_u: id } });
         return data;
     } catch (error) {
         throw error;

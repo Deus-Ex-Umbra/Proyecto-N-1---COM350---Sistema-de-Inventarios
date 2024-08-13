@@ -12,9 +12,9 @@ export const createProduct = async (data) => {
             price_unit: data.price_unit,
             id_inv: data.id_inv
         };
-        const data = await Product.create(product_data, { transaction });
+        const product = await Product.create(product_data, { transaction });
         await transaction.commit();
-        return data;
+        return product;
     } catch (error) {
         await transaction.rollback();
         throw error;
@@ -32,9 +32,9 @@ export const updateProduct = async (id, data) => {
             price_unit: data.price_unit,
             id_inv: data.id_inv
         };
-        const data = await Product.update(product_data, { where: { id_product: id } }, { transaction });
+        const product = await Product.update(product_data, { where: { id_product: id } }, { transaction });
         await transaction.commit();
-        return data;
+        return product;
     } catch (error) {
         await transaction.rollback();
         throw error;
@@ -65,6 +65,15 @@ export const getAllProducts = async () => {
 export const getProductById = async (id) => {
     try {
         const data = await Product.findByPk(id);
+        return data;
+    } catch (error) {
+        throw error;
+    }
+};
+
+export const getProductByInventoryId = async (id) => {
+    try {
+        const data = await Product.findAll({ where: { id_inv: id } });
         return data;
     } catch (error) {
         throw error;
