@@ -18,8 +18,10 @@ export const Product = sequelize.define("product", {
         type: DataTypes.INTEGER
     },
     total_price: {
-        type: DataTypes.DECIMAL,
-        defaultValue: 0
+        type: DataTypes.DECIMAL
+    },
+    price_unit: {
+        type: DataTypes.DECIMAL
     },
     id_inv: {
         type: DataTypes.INTEGER,

@@ -59,3 +59,14 @@ export const getProductByInventoryId = async (req, res) => {
         res.status(500).json({ message: error.message });
     }
 };
+
+export const getProductInvestment = async (req, res) => {
+    try {
+        const id = req.params.id;
+        const revenue = await productService.getProductInvestment(id);
+        res.status(200).json({revenue});
+    } catch (error) {
+        res.status(500).json({ error: error.message });
+    }
+}
+

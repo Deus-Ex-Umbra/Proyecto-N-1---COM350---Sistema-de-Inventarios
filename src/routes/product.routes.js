@@ -9,5 +9,6 @@ router.delete('/products/:id', productController.deleteProduct);
 router.get('/products', productController.getAllProducts);
 router.get('/products/:id', productController.getProductById);
 router.get('/products/inventory/:id', productController.getProductByInventoryId);
+router.get('/product/:id', productController.getProductInvestment);
 
 export default router;

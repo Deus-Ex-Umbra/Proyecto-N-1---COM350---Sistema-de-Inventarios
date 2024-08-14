@@ -5,6 +5,7 @@ export const createProduct = async (data) => {
     const transaction = await sequelize.transaction();
     try {
         const product_data = {
+            id_product: data.id_product,
             name: data.name,
             description: data.description,
             quantity: data.quantity,
@@ -79,3 +80,31 @@ export const getProductByInventoryId = async (id) => {
         throw error;
     }
 };
+
+export const getProductInvestment = async (id) => {
+    const transaction = await sequelize.transaction();
+    try {
+        let revenue;
+        const product = await Product.findOne({
+            attributes: ['name', 'price_unit', "quantity"], 
+            where: { id_product: id } 
+        });
+
+        if (product) {
+            revenue = product.price_unit * product.quantity;
+        } else {
+            return null;
+        }
+
+        const investment = {
+            id: product.name,
+            price: product.price_unit,
+            investment: revenue
+        }
+        return investment;
+
+    } catch (error) {
+        throw error;
+    }
+
+}
