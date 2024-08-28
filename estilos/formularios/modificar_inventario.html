@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modificar Inventario</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #e0f7fa;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .form-container {
+            background-color: #ffffff;
+            padding: 25px 30px;
+            border-radius: 15px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+            width: 450px;
+        }
+
+        .form-container h2 {
+            text-align: center;
+            margin-bottom: 25px;
+            font-size: 24px;
+            color: #28a745;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 7px;
+            font-weight: bold;
+            color: #333;
+        }
+
+        .form-group input[type="text"],
+        .form-group input[type="number"],
+        .form-group input[type="file"],
+        .form-group input[type="float"] {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            box-sizing: border-box;
+            font-size: 16px;
+            transition: all 0.3s ease;
+        }
+
+        .form-group input[type="text"]:focus,
+        .form-group input[type="number"]:focus,
+        .form-group input[type="float"]:focus {
+            border-color: #28a745;
+            box-shadow: 0 0 8px rgba(40, 167, 69, 0.25);
+        }
+
+        .form-group input[type="file"] {
+            display: none;
+        }
+
+        .form-group .upload-label {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 25px;
+            border: 2px dashed #28a745;
+            border-radius: 10px;
+            cursor: pointer;
+            text-align: center;
+            color: #28a745;
+            font-size: 18px;
+            transition: background-color 0.3s ease, border-color 0.3s ease;
+        }
+
+        .form-group .upload-label:hover {
+            background-color: #e6ffe6;
+            border-color: #218838;
+        }
+
+        .form-group .upload-label i {
+            font-size: 50px;
+            margin-bottom: 10px;
+            color: #28a745;
+        }
+
+        .form-group .upload-label span {
+            display: block;
+            color: #28a745;
+        }
+
+        .form-group button {
+            width: 100%;
+            padding: 12px 0;
+            background-color: #28a745;
+            color: #fff;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 18px;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+        }
+
+        .form-group button:hover {
+            background-color: #218838;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="form-container">
+        <h2>Modificar Inventario</h2>
+        <form action="your_update_endpoint" method="POST" enctype="multipart/form-data">
+            <div class="form-group">
+                <label for="code">Código del Inventario</label>
+                <input type="number" id="code" name="CODEINV" placeholder="Código del Inventario" readonly>
+            </div>
+            <div class="form-group">
+                <label for="name">Nombre del Inventario</label>
+                <input type="text" id="name" name="NAMEINV" placeholder="Nombre del Inventario">
+            </div>
+            <div class="form-group">
+                <label for="description">Descripción</label>
+                <input type="text" id="description" name="DESCRIPTIONINV" placeholder="Descripción del Inventario">
+            </div>
+            <div class="form-group">
+                <label for="ubication">Ubicación</label>
+                <input type="text" id="ubication" name="UBICATIONINV" placeholder="Ubicación del Inventario">
+            </div>
+            <div class="form-group">
+                <label for="photo">Foto del Inventario</label>
+                <label for="photo" class="upload-label">
+                    <i class="fa-solid fa-image"></i>
+                    <span>Haz clic para cambiar la imagen</span>
+                </label>
+                <input type="file" id="photo" name="PHOTOINV" accept="image/*">
+            </div>
+            <div class="form-group">
+                <label for="totalAmount">Cantidad Total</label>
+                <input type="number" id="totalAmount" name="TOTALAMOUNT" placeholder="Cantidad Total">
+            </div>
+            <div class="form-group">
+                <label for="totalValue">Valor Total</label>
+                <input type="number" step="0.01" id="totalValue" name="TOTALVALUEINV" placeholder="Valor Total">
+            </div>
+            <div class="form-group">
+                <button type="submit">Guardar Cambios</button>
+            </div>
+        </form>
+    </div>
+
+    <script>
+        const fileInput = document.getElementById('photo');
+        const label = document.querySelector('.upload-label span');
+
+        fileInput.addEventListener('change', function () {
+            if (fileInput.files.length > 0) {
+                label.textContent = fileInput.files[0].name;
+            } else {
+                label.textContent = 'Haz clic para cambiar la imagen';
+            }
+        });
+    </script>
+</body>
+
+</html>

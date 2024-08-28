@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style.css">
+    <title>Lista de Inventarios</title>
+</head>
+<body>
+    <div class="contenedor">
+        <div class="encabezado">
+            <div class="logo">
+                <img src="imagenes/logo.png" width="80px">
+                <h1 hidden>FARMACORP</h1>
+            </div>
+            <div class="navegacion">
+                <button class="menu">
+                    <a href="inventario.html">Inventarios</a>
+                </button>
+                <button class="menu">
+                    <a href="product.html">Productos</a>
+                </button>
+            </div>
+        </div>
+        <div class="herramientas">
+            <div class="volver">
+                <img src="imagenes/paquete.png" width="50px">
+                <h1 hidden>Inventarios Disponibles</h1>
+            </div>
+            <div class="filtros">
+                <div class="buscador">
+                    <input type="text" placeholder="¿Que inventario desea buscar?">
+                    <i class="fa-solid fa-search"></i>
+                </div>
+                <div class="ordenar">
+                    <a href="inventario.html">
+                        <button>
+                            <p id="lista" hidden>Mostrar en Bloques</p>
+                            <i class="fa-solid fa-box"></i>
+                        </button>
+                    </a>
+                </div>    
+            </div>
+            </div>
+        </div>
+        <div class="contenido">
+            <table class="lista">
+                <thead>
+                    <tr>
+                        <th>Nombre</th>
+                        <th>Descripción</th>
+                        <th>Cantidad</th>
+                        <th>Capacidad</th>
+                        <th>Faltante para Llenar</th>
+                        <th>Precio Total</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="par">
+                        <td>Aspirina</td>
+                        <td>Tabletas de 500 mg</td>
+                        <td>100</td>
+                        <td>150</td>
+                        <td>50</td> 
+                        <td>150.00</td>
+                    </tr>
+                    <tr class="impar">
+                        <td>Ibuprofeno</td>
+                        <td>Tabletas de 200 mg</td>
+                        <td>200</td>
+                        <td>250</td>
+                        <td>50</td> 
+                        <td>120.50</td>
+                    </tr>
+                    <tr class="par">
+                        <td>Amoxicilina</td>
+                        <td>Cápsulas de 250 mg</td>
+                        <td>50</td>
+                        <td>100</td>
+                        <td>50</td> 
+                        <td>75.75</td>
+                    </tr>
+                    <tr class="impar">
+                        <td>Vitamina C</td>
+                        <td>Suplemento de 1000 mg</td>
+                        <td>150</td>
+                        <td>200</td>
+                        <td>50</td> 
+                        <td>90.00</td>
+                    </tr>
+                    <tr class="par">
+                        <td>Paracetamol</td>
+                        <td>Tabletas de 500 mg</td>
+                        <td>120</td>
+                        <td>180</td>
+                        <td>60</td> 
+                        <td>95.00</td>
+                    </tr>
+                    <tr class="impar">
+                        <td>Omeprazol</td>
+                        <td>Cápsulas de 20 mg</td>
+                        <td>75</td>
+                        <td>100</td>
+                        <td>25</td>
+                        <td>85.50</td>
+                    </tr>
+                    <tr class="par">
+                        <td>Cetirizina</td>
+                        <td>Tabletas de 10 mg</td>
+                        <td>200</td>
+                        <td>250</td>
+                        <td>50</td> 
+                        <td>105.00</td>
+                    </tr>
+                    <tr class="impar">
+                        <td>Loratadina</td>
+                        <td>Tabletas de 10 mg</td>
+                        <td>150</td>
+                        <td>200</td>
+                        <td>50</td> 
+                        <td>95.25</td>
+                    </tr>
+                    <tr class="par">
+                        <td>Metformina</td>
+                        <td>Tabletas de 500 mg</td>
+                        <td>180</td>
+                        <td>220</td>
+                        <td>40</td> 
+                        <td>150.75</td>
+                    </tr>
+                    <tr class="impar">
+                        <td>Enalapril</td>
+                        <td>Tabletas de 10 mg</td>
+                        <td>110</td>
+                        <td>150</td>
+                        <td>40</td> 
+                        <td>125.00</td>
+                    </tr>
+                    <tr class="par">
+                        <td>Simvastatina</td>
+                        <td>Tabletas de 20 mg</td>
+                        <td>95</td>
+                        <td>130</td>
+                        <td>35</td> 
+                        <td>130.50</td>
+                    </tr>
+                    <tr class="impar">
+                        <td>Losartán</td>
+                        <td>Tabletas de 50 mg</td>
+                        <td>130</td>
+                        <td>180</td>
+                        <td>50</td> 
+                        <td>140.00</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+</body>
+</html>

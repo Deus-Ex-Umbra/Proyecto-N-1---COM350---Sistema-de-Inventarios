@@ -1,0 +1,632 @@
+body{
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.contenedor{
+    margin: 0 auto;
+    padding: 0;
+}
+
+.encabezado{
+    display: flex;
+    background-color: #A1D2CE;
+    align-items: center;
+    align-content: center;
+    justify-content: space-between;
+}
+
+.logo{
+    margin-left: 80px;
+    padding: 15px 20px;
+    width: 30%;
+    height: 80px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    align-content: center;
+}
+
+.logo:hover{
+    justify-content: space-evenly;
+}
+
+.logo:hover h1{
+    display: flex;
+}
+
+.logo h1{
+    font-size: 50px;
+    color: #5497A7;
+}
+
+.navegacion{
+    margin-right: 50px;
+    display: flex;
+    height: 40px;
+    width: 20%;
+    justify-content: space-between;
+    flex-flow: row wrap;
+}
+
+.navegacion a{
+    color: black;
+    font-size: 16px;
+    text-decoration: none;
+}
+
+.menu{
+    width: 25%;
+    background-color: transparent;
+    border: 0;
+    justify-content: center;
+}
+
+.menu:hover{
+    width: 100%;
+    max-width: 150px;
+    background-color: transparent;
+    border-radius: 40px;
+    display: flex;
+    align-items: center;
+    transition: max-height 0.5s;
+    overflow: hidden;
+    border: none;
+    margin-right: 20px;
+    box-shadow: 0 20px 20px 0 rgba(0, 0, 0, .2);
+}
+
+.herramientas{
+    display: flex;
+    justify-content: space-between;
+    padding: 30px 0;
+    margin: 0 60px;
+    align-items: center;
+}
+
+.volver{
+    margin-left: 40px;
+    display: flex;
+    width: 35%;
+    align-items: center;
+}
+
+.volver:hover{
+    justify-content: space-evenly
+}
+
+.volver:hover h1{
+    display: flex;
+    color: #5497A7;
+    margin: 0;
+}
+
+.filtros{
+    width: 40%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.buscador{
+    width: 55%;
+    background-color: transparent;
+    border-radius: 40px;
+    display: flex;
+    align-items: center;
+    transition: max-height 0.5s;
+    overflow: hidden;
+    border: none;
+    margin-right: 20px;
+    box-shadow: 0 20px 20px 0 rgba(0, 0, 0, .2);
+}
+
+.buscador:hover{
+    width: 55%;
+    background-color: transparent;
+    border-radius: 40px;
+    display: flex;
+    align-items: center;
+    transition: max-height 0.5s;
+    overflow: hidden;
+    border: none;
+    margin-right: 20px;
+    box-shadow: 0 20px 20px 0 rgba(0, 0, 0, 0.434);
+}
+
+.buscador input{
+    width: 100%;
+    background: transparent;
+    border: 0;
+    outline: none;
+    padding: 10px;
+    color: black;
+}
+
+.buscador input::placeholder{
+    color: #3a413f;
+    font-size: 14px;
+}
+
+.filtrador{
+    width: 20%;
+    height: 50%;
+    background-color: transparent;
+    border-radius: 40px;
+    display: flex;
+    align-items: center;
+    transition: max-height 0.5s;
+    overflow: hidden;
+    border: none;
+    box-shadow: 0 20px 20px 0 rgba(0, 0, 0, .2);
+    margin-right: 15px;
+    
+}
+
+.filtrador:hover{
+    width: 20%;
+    height: 50%;
+    background-color: transparent;
+    border-radius: 40px;
+    display: flex;
+    align-items: center;
+    transition: max-height 0.5s;
+    overflow: hidden;
+    border: none;
+    box-shadow: 0 20px 20px 0 rgba(0, 0, 0, 0.49);
+}
+
+.filtrador .boton{
+    width: 90%;
+    display: flex;
+    align-items: center;
+    margin: 0 auto;
+    justify-content: space-between;
+    cursor: pointer;
+}
+
+.filtrador .boton p{
+    color: #3a413f;
+    font-size: 14px;
+    margin-left: 10px;
+}
+
+.ordenar{
+    width: 8%;
+    height: 40px;
+    background-color: transparent; 
+    border-radius: 40px;
+    transition: max-height 0.5s;
+    overflow: hidden;
+    border: none;
+    box-shadow: 0 20px 20px 0 rgba(0, 0, 0, .2);
+    justify-content: center;
+    align-content: center;
+}
+
+.ordenar:hover{
+    width: 30%;
+    transition: max-height 0.25s;
+    box-shadow: 0 20px 20px 0 rgba(0, 0, 0, 0.515);
+}
+
+.ordenar a button{
+    margin: 0 auto;
+    width: 90%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+.ordenar:hover #lista{
+    display: flex;
+}
+
+.filtros i{
+    font-size: 20px;
+    margin-right: 15px;
+    color: rgb(158, 31, 232);
+}
+
+.ordenar button{
+    background-color: transparent;
+    border: 0;
+    text-align: center;
+}
+
+.ordenar button i{
+    margin: 0 auto;
+}
+
+.inventario{
+    width: 85%;
+    margin: 0 auto;
+    display: flex;
+    flex-flow: wrap row;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+    gap: 50px 100px;
+}
+
+.tarjetas{
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
+    display: flex;
+    background-color: transparent;
+    border: 3px solid rgba(255, 255, 255, .2);
+    backdrop-filter: blur(20px);
+    box-shadow: 0 20px 30px 0 rgba(0, 0, 0, .2);
+    border-radius: 25px;
+}
+
+.inventario .nuevo{
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 20px 20px 0 rgba(0, 0, 0, .2);
+    margin-top: 20px;
+}
+
+.inventario .nuevo:hover{
+    box-shadow: 0 20px 20px 0 rgba(0, 0, 0, 0.581);
+}
+
+.tarjetas:hover{
+    margin: 10px;
+    box-shadow: 0 20px 20px 0 rgba(0, 0, 0, 0.581);
+}
+
+.tarjetas img{
+    width: 85%;
+    border-radius: 10px;
+    box-shadow: 0 20px 20px 0 rgba(0, 0, 0, .2);
+    margin-top: 20px;
+}
+
+.informacion{
+    width: 90%;
+    margin: 25px;
+    text-align: center;
+    background-color: #5496a77f;
+    border-radius: 15px;
+}
+
+.informacion h2{
+    margin: 0;
+    background-color: #5497A7;
+    border-radius: 15px 15px 0 0;
+    padding: 20px;
+}
+
+
+.detalles{
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #5497A7;
+    border-radius: 0 0 15px 15px;
+}
+
+.detalles .info:hover{
+    height: 35px;
+    width: 45%;
+    background-color: transparent;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: max-height 0.5s;
+    overflow: hidden;
+    border: none;
+    box-shadow: 0 20px 20px 0 rgba(0, 0, 0, .2);
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+/*Parte de la Pagina de lista*/
+
+.lista {
+    width: 90%;
+    margin: 30px auto;
+    margin-bottom: 40px;
+    padding: 30px;
+    background-color: transparent;
+    border: 3px solid rgba(255, 255, 255, .2);
+    backdrop-filter: blur(20px);
+    box-shadow: 0 20px 20px 0 rgba(0, 0, 0, 0.581);
+    border-radius: 25px;
+}
+
+.lista th, .lista td {
+    padding: 5px;
+    text-align: center;
+    font-size: 14px;
+}
+
+.lista tr:hover{
+    border: 2px solid rgba(255, 255, 255, .2);
+    border-radius: 15px;
+    backdrop-filter: blur(20px);
+    overflow: hidden;
+    border: none;
+    transition: max-height 0.10s;
+    box-shadow: 0 10px 10px 0 rgba(0, 0, 0, 0.7);
+}
+
+
+.lista .par{
+    background-color:palevioletred;
+}
+
+
+/*estilo del index.html*/
+.marca {
+    width: 85%;
+    margin: 30px auto;
+    padding: 0px;
+    background-color: rgba(147, 112, 216, 0.492);
+    border: 2px solid rgba(255, 255, 255, .2);
+    border-radius: 15px;
+    backdrop-filter: blur(20px);
+    overflow: hidden;
+    border: none;
+    transition: max-height 0.10s;
+    box-shadow: 0 10px 10px 0 rgba(0, 0, 0, 0.2);
+}
+
+.contenido .nueva{
+    background-color: #3a413f;
+}
+
+.logo_marca{
+    display: flex;
+    align-items: center;
+    margin-left: 50px;
+    width: 30%;
+    text-align: center;
+}
+
+.logo_marca i{
+    font-size: 30px;
+}
+
+.info_marca{
+    width: 100%;
+    background-color: mediumpurple;
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+    align-items: center;
+}
+
+.info_marca .cantidades{
+    width: 40%;
+    margin-right: 20px;
+    display: flex;
+    border: 0;
+    justify-content: space-evenly;
+}
+
+.cantidades button{
+    width: 35%;
+    height: 40px;
+    background-color: transparent;
+    border: 0;
+    cursor: pointer;
+}
+
+.cantidades button:hover{
+    width: 40%;
+    height: 40px;
+    border-radius: 40px;
+    transition: max-height 0.5s;
+    overflow: hidden;
+    border: none;
+    box-shadow: 0 20px 20px 0 rgba(0, 0, 0, .2);
+    cursor: pointer;
+    align-items: center;
+    align-content: center;
+}
+
+.cantidades h3{
+    font-size: 16px;
+    margin: 0 auto;
+}
+
+.info_marca h2{
+    margin-left: 5%;
+}
+
+.item{
+    width: 90%;
+    margin: 10px auto;
+    margin-bottom: 30px;
+    background-color: rgba(105, 90, 205, 0.301);
+    border: 2px solid rgba(255, 255, 255, .2);
+    border-radius: 25px;
+    backdrop-filter: blur(20px);
+    overflow: hidden;
+    border: none;
+    transition: max-height 0.10s;
+    box-shadow: 0 10px 10px 0 rgba(0, 0, 0, 0.2);
+    background-color: #5496a779;
+}
+
+.logo_item{
+    display: flex;
+    align-items: center;
+    margin-left: 50px;
+    width: 30%;
+    text-align: center;
+}
+
+.logo_item i{
+    font-size: 30px;
+}
+
+.info_item{
+    width: 100%;
+    background-color: rgb(112, 176, 216);
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+    align-items: center;
+}
+
+.info_item .cantidades{
+    width: 40%;
+    margin-right: 20px;
+    display: flex;
+    border: 0;
+    justify-content: space-evenly;
+}
+
+.cantidades button{
+    width: 35%;
+    height: 40px;
+    background-color: transparent;
+    border: 0;
+    cursor: pointer;
+}
+
+.cantidades button:hover{
+    width: 40%;
+    height: 40px;
+    border-radius: 40px;
+    transition: max-height 0.5s;
+    overflow: hidden;
+    border: none;
+    box-shadow: 0 20px 20px 0 rgba(0, 0, 0, .2);
+    cursor: pointer;
+    align-items: center;
+    align-content: center;
+}
+
+.cantidades h3{
+    font-size: 16px;
+    margin: 0 auto;
+}
+
+.info_item h2{
+    margin-left: 5%;
+}
+
+
+.producto{
+    width: 90%;
+    margin: 30px auto;
+    background-color: rgba(105, 90, 205, 0.301);
+    border: 2px solid rgba(255, 255, 255, .2);
+    border-radius: 25px;
+    backdrop-filter: blur(20px);
+    overflow: hidden;
+    border: none;
+    transition: max-height 0.10s;
+    box-shadow: 0 10px 10px 0 rgba(0, 0, 0, 0.2);
+}
+
+.menu_item {
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+    align-content: center;
+    align-items: center;
+}
+
+.menu_item .mensaje{
+    margin-left: 60px;
+}
+.menu_item .herramientas{
+    width: 30%;
+    height: 10px;
+    margin-top: 10px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.menu_item .herramientas .icono{
+    width: 40px;
+    height: 40px;
+    margin-left: auto;
+    background-color: transparent;
+    transition: max-height 0.5s;
+    border-radius: 10px;
+    overflow: hidden;
+    border: none;
+    box-shadow: 0 5px 5px 0 rgba(0, 0, 0, 0.343);
+    text-align: center;
+}
+
+.menu_item .herramientas .icono:hover {
+    width: 120px;
+    height: 40px;
+    display: flex;
+    justify-content: space-between;
+    transition: max-height 0.20s;
+    border-radius: 10px;
+    overflow: hidden;
+    border: none;
+    box-shadow: 0 5px 5px 0 rgba(0, 0, 0, 0.601);
+    align-items: center;
+}
+
+.menu_item .herramientas .icono:hover .texto{
+    display: flex;
+    padding-left: 10px;
+    font-size: 16px;
+}
+
+.menu_item i{
+    margin: 0 auto;
+    font-size: 20px;
+}
+
+.nuevo {
+    width: 90%;
+    margin: 20px auto;
+    background-color: transparent;
+    backdrop-filter: blur(20px);
+    box-shadow: 0 10px 10px 0 rgba(0, 0, 0, 0.581);
+    border-radius: 15px;
+    text-align: center;
+    align-content: center;
+}
+
+
+.tabla_producto {
+    margin: 10px auto;
+    margin-bottom: 40px;
+    padding: 5px 30px;
+    background-color: transparent;
+}
+
+
+.tabla_producto th, .tabla_producto td {
+    border: 0;
+    padding: 5px;
+    text-align: center;
+    font-size: 14px;
+}
+
+.tabla_producto tr:hover{
+    background-color: transparent;
+    border: 2px solid rgba(255, 255, 255, .2);
+    border-radius: 15px;
+    backdrop-filter: blur(20px);
+    overflow: hidden;
+    border: none;
+    transition: max-height 0.10s;
+    box-shadow: 0 10px 10px 0 rgba(0, 0, 0, 0.7);
+}
+
+
+.tabla_producto .par{
+    background-color: rgba(44, 226, 187, 0.713);
+}

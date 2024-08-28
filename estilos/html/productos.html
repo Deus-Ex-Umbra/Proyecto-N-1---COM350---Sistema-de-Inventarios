@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style.css">
+    <title>Vista Productos</title>
+</head>
+<body>
+    <div class="contenedor">
+        <div class="encabezado">
+            <div class="logo">
+                <img src="imagenes/logo.png" width="80px">
+                <h1 hidden>FARMACORP</h1>
+            </div>
+            <div class="navegacion">
+                <button class="menu">
+                    <a href="inventario.html">Inventarios</a>
+                </button>
+                <button class="menu">
+                    <a href="product.html">Productos</a>
+                </button>
+            </div>
+        </div>
+        <div class="herramientas">
+            <div class="volver">
+                <img src="imagenes/paquete.png" width="50px">
+                <h1 hidden>Inventarios Disponibles</h1>
+            </div>
+            <div class="filtros">
+                <div class="buscador">
+                    <input type="text" placeholder="¿Que inventario desea buscar?">
+                    <i class="fa-solid fa-search"></i>
+                </div>
+                <div class="filtrador">
+                    <div class="boton">
+                        <p>Filtros</p>
+                        <i class="fa-solid fa-filter"></i> 
+                    </div>
+                </div>
+                <div class="ordenar">
+                    <a href="inventario.html">
+                        <button>
+                            <i class="fa-solid fa-box"></i>
+                        </button>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="contenido">
+            <div class="marca nueva">
+                <h2>Añadir una Marca +</h2>
+            </div>
+
+            <div class="marca">
+                <div class="info_marca">
+                    <div class="logo_marca">
+                        <i class="fas fa-pills"></i>
+                        <h2>Nombre Marca</h2>
+                    </div>
+                    <div class="cantidades">
+                        <button class="cantidad_item">
+                            <h3>Items: 30</h3>
+                        </button>
+                        <button class="cantidad_medicamento">
+                            <h3>Medicamentos: 30</h3>
+                        </button>
+                    </div>
+                </div>
+                <div class="menu_item">
+                    <div class="mensaje">
+                        <p>Herramientas para los Items:</p>
+                    </div>
+                    <div class="herramientas">
+                        <button class="icono imprimir">
+                            <p class="texto" hidden>Detalles</p>
+                            <i class="fas fa-print"></i>
+                        </button>
+                        <button class="icono editar">
+                            <p class="texto" hidden>Modificar</p>
+                            <i class="fas fa-edit"></i>
+                        </button>
+                        <button class="icono agregar">
+                            <p class="texto" hidden>Agregar</p>  
+                            <i class="fas fa-plus"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="marca">
+                <div class="info_marca">
+                    <div class="logo_marca">
+                        <i class="fas fa-pills"></i>
+                        <h2>Nombre Marca</h2>
+                    </div>
+                    <div class="cantidades">
+                        <button class="cantidad_item">
+                            <h3>Items: 30</h3>
+                        </button>
+                        <button class="cantidad_medicamento">
+                            <h3>Medicamentos: 30</h3>
+                        </button>
+                    </div>
+                </div>
+                <div class="menu_item">
+                    <div class="mensaje">
+                        <p>Herramientas para los Items:</p>
+                    </div>
+                    <div class="herramientas">
+                        <button class="icono imprimir">
+                            <p class="texto" hidden>Detalles</p>
+                            <i class="fas fa-print"></i>
+                        </button>
+                        <button class="icono editar">
+                            <p class="texto" hidden>Modificar</p>
+                            <i class="fas fa-edit"></i>
+                        </button>
+                        <button class="icono agregar">
+                            <p class="texto" hidden>Agregar</p>  
+                            <i class="fas fa-plus"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="info_item">
+                        <div class="logo_item">
+                            <i class="fa-solid fa-barcode"></i>
+                            <h2>Nombre del item</h2>
+                        </div>
+                        <div class="cantidades">
+                            <button class="cantidad_medicamento">
+                                <h3>Medicamentos: 30</h3>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="producto">
+                        <div class="menu_item">
+                            <div class="mensaje">
+                                <p>Herramientas para los Productos:</p>
+                            </div>
+                            <div class="herramientas">
+                                <button class="icono imprimir">
+                                    <p class="texto" hidden>Detalles</p>
+                                    <i class="fas fa-print"></i>
+                                </button>
+                                <button class="icono editar">
+                                    <p class="texto" hidden>Modificar</p>
+                                    <i class="fas fa-edit"></i>
+                                </button>
+                                <button class="icono agregar">
+                                    <p class="texto" hidden>Agregar</p>  
+                                    <i class="fas fa-plus"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <table class="tabla_producto">
+                            <thead>                        
+                                <tr>
+                                    <th>ID Producto</th>
+                                    <th>Nombre</th>
+                                    <th>Descripción</th>
+                                    <th>Cantidad</th>
+                                    <th>Precio Total</th>
+                                    <th>Precio Unitario</th>
+                                    <th>Fecha de Vencimiento</th>
+                                    <th>ID Categoría</th>
+                                    <th>ID Proveedor</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="par">
+                                    <td>P00001</td>
+                                    <td>Aspirina 100 mg</td>
+                                    <td>Tabletas de 100 mg</td>
+                                    <td>200</td>
+                                    <td>300.00</td>
+                                    <td>1.50</td>
+                                    <td>2025-12-31</td>
+                                    <td>1</td>
+                                    <td>A00001</td>
+                                </tr>
+                                <tr class="impar">
+                                    <td>P00002</td>
+                                    <td>Ibuprofeno 400 mg</td>
+                                    <td>Caja con 20 tabletas</td>
+                                    <td>150</td>
+                                    <td>200.00</td>
+                                    <td>2.00</td>
+                                    <td>2024-11-30</td>
+                                    <td>2</td>
+                                    <td>B00002</td>
+                                </tr>
+                                <tr class="par">
+                                    <td>P00003</td>
+                                    <td>Amoxicilina 500 mg</td>
+                                    <td>Frasco de 30 cápsulas</td>
+                                    <td>100</td>
+                                    <td>350.00</td>
+                                    <td>3.50</td>
+                                    <td>2024-10-15</td>
+                                    <td>3</td>
+                                    <td>C00003</td>
+                                </tr>
+                                <tr class="impar">
+                                    <td>P00004</td>
+                                    <td>Vitamina C 500 mg</td>
+                                    <td>Frasco de 60 tabletas</td>
+                                    <td>180</td>
+                                    <td>540.00</td>
+                                    <td>3.00</td>
+                                    <td>2025-05-20</td>
+                                    <td>4</td>
+                                    <td>D00004</td>
+                                </tr>
+                                <tr class="par">
+                                    <td>P00005</td>
+                                    <td>Paracetamol 650 mg</td>
+                                    <td>Caja con 50 tabletas</td>
+                                    <td>250</td>
+                                    <td>400.00</td>
+                                    <td>2.00</td>
+                                    <td>2024-08-10</td>
+                                    <td>3</td>
+                                    <td>E00005</td>
+                                </tr>
+                                <tr class="impar">
+                                    <td>P00006</td>
+                                    <td>Clorfenamina 4 mg</td>
+                                    <td>Caja con 30 tabletas</td>
+                                    <td>120</td>
+                                    <td>180.00</td>
+                                    <td>1.50</td>
+                                    <td>2025-01-25</td>
+                                    <td>1</td>
+                                    <td>A00001</td>
+                                </tr>
+                                <tr class="par">
+                                    <td>P00007</td>
+                                    <td>Omeprazol 20 mg</td>
+                                    <td>Caja con 30 cápsulas</td>
+                                    <td>80</td>
+                                    <td>160.00</td>
+                                    <td>2.00</td>
+                                    <td>2025-03-30</td>
+                                    <td>2</td>
+                                    <td>B00002</td>
+                                </tr>
+                                <tr class="impar">
+                                    <td>P00008</td>
+                                    <td>Cetirizina 10 mg</td>
+                                    <td>Caja con 20 tabletas</td>
+                                    <td>140</td>
+                                    <td>210.00</td>
+                                    <td>1.50</td>
+                                    <td>2024-12-31</td>
+                                    <td>3</td>
+                                    <td>C00003</td>
+                                </tr>
+                                <tr class="par">
+                                    <td>P00009</td>
+                                    <td>Loratadina 10 mg</td>
+                                    <td>Caja con 30 tabletas</td>
+                                    <td>170</td>
+                                    <td>255.00</td>
+                                    <td>1.50</td>
+                                    <td>2025-06-15</td>
+                                    <td>4</td>
+                                    <td>D00004</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="item">
+                    <div class="info_item">
+                        <div class="logo_item">
+                            <i class="fa-solid fa-barcode"></i>
+                            <h2>Nombre del item</h2>
+                        </div>
+                        <div class="cantidades">
+                            <button class="cantidad_medicamento">
+                                <h3>Medicamentos: 30</h3>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="item">
+                    <div class="info_item">
+                        <div class="logo_item">
+                            <i class="fa-solid fa-barcode"></i>
+                            <h2>Nombre del item</h2>
+                        </div>
+                        <div class="cantidades">
+                            <button class="cantidad_medicamento">
+                                <h3>Medicamentos: 30</h3>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="item">
+                    <div class="info_item">
+                        <div class="logo_item">
+                            <i class="fa-solid fa-barcode"></i>
+                            <h2>Nombre del item</h2>
+                        </div>
+                        <div class="cantidades">
+                            <button class="cantidad_medicamento">
+                                <h3>Medicamentos: 30</h3>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="marca">
+                <div class="info_marca">
+                    <div class="logo_marca">
+                        <i class="fas fa-pills"></i>
+                        <h2>Nombre Marca</h2>
+                    </div>
+                    <div class="cantidades">
+                        <button class="cantidad_item">
+                            <h3>Items: 30</h3>
+                        </button>
+                        <button class="cantidad_medicamento">
+                            <h3>Medicamentos: 30</h3>
+                        </button>
+                    </div>
+                </div>
+                <div class="menu_item">
+                    <div class="mensaje">
+                        <p>Herramientas para los Items:</p>
+                    </div>
+                    <div class="herramientas">
+                        <button class="icono imprimir">
+                            <p class="texto" hidden>Detalles</p>
+                            <i class="fas fa-print"></i>
+                        </button>
+                        <button class="icono editar">
+                            <p class="texto" hidden>Modificar</p>
+                            <i class="fas fa-edit"></i>
+                        </button>
+                        <button class="icono agregar">
+                            <p class="texto" hidden>Agregar</p>  
+                            <i class="fas fa-plus"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="item">
+
+                    <div class="info_item">
+                        <div class="logo_item">
+                            <i class="fa-solid fa-barcode"></i>
+                            <h2>Nombre del item</h2>
+                        </div>
+                        <div class="cantidades">
+                            <button class="cantidad_medicamento">
+                                <h3>Medicamentos: 30</h3>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="producto">
+                        <div class="menu_item">
+                            <div class="mensaje">
+                                <p>Herramientas para los Productos:</p>
+                            </div>
+                            <div class="herramientas">
+                                <button class="icono imprimir">
+                                    <p class="texto" hidden>Detalles</p>
+                                    <i class="fas fa-print"></i>
+                                </button>
+                                <button class="icono editar">
+                                    <p class="texto" hidden>Modificar</p>
+                                    <i class="fas fa-edit"></i>
+                                </button>
+                                <button class="icono agregar">
+                                    <p class="texto" hidden>Agregar</p>  
+                                    <i class="fas fa-plus"></i>
+                                </button>
+                            </div>
+                        </div>
+
+                        <table class="tabla_producto">
+                            <thead>
+                                <tr>
+                                    <th>ID Producto</th>
+                                    <th>Nombre</th>
+                                    <th>Descripción</th>
+                                    <th>Cantidad</th>
+                                    <th>Precio Total</th>
+                                    <th>Precio Unitario</th>
+                                    <th>Fecha de Vencimiento</th>
+                                    <th>ID Categoría</th>
+                                    <th>ID Proveedor</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="par">
+                                    <td>P00001</td>
+                                    <td>Aspirina 100 mg</td>
+                                    <td>Tabletas de 100 mg</td>
+                                    <td>200</td>
+                                    <td>300.00</td>
+                                    <td>1.50</td>
+                                    <td>2025-12-31</td>
+                                    <td>1</td>
+                                    <td>A00001</td>
+                                </tr>
+                                <tr class="impar">
+                                    <td>P00002</td>
+                                    <td>Ibuprofeno 400 mg</td>
+                                    <td>Caja con 20 tabletas</td>
+                                    <td>150</td>
+                                    <td>200.00</td>
+                                    <td>2.00</td>
+                                    <td>2024-11-30</td>
+                                    <td>2</td>
+                                    <td>B00002</td>
+                                </tr>
+                                <tr class="par">
+                                    <td>P00003</td>
+                                    <td>Amoxicilina 500 mg</td>
+                                    <td>Frasco de 30 cápsulas</td>
+                                    <td>100</td>
+                                    <td>350.00</td>
+                                    <td>3.50</td>
+                                    <td>2024-10-15</td>
+                                    <td>3</td>
+                                    <td>C00003</td>
+                                </tr>
+                                <tr class="impar">
+                                    <td>P00004</td>
+                                    <td>Vitamina C 500 mg</td>
+                                    <td>Frasco de 60 tabletas</td>
+                                    <td>180</td>
+                                    <td>540.00</td>
+                                    <td>3.00</td>
+                                    <td>2025-05-20</td>
+                                    <td>4</td>
+                                    <td>D00004</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="item">
+                    <div class="info_item">
+                        <div class="logo_item">
+                            <i class="fa-solid fa-barcode"></i>
+                            <h2>Nombre del item</h2>
+                        </div>
+                        <div class="cantidades">
+                            <button class="cantidad_medicamento">
+                                <h3>Medicamentos: 30</h3>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="item">
+                    <div class="info_item">
+                        <div class="logo_item">
+                            <i class="fa-solid fa-barcode"></i>
+                            <h2>Nombre del item</h2>
+                        </div>
+                        <div class="cantidades">
+                            <button class="cantidad_medicamento">
+                                <h3>Medicamentos: 30</h3>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="item">
+                    <div class="info_item">
+                        <div class="logo_item">
+                            <i class="fa-solid fa-barcode"></i>
+                            <h2>Nombre del item</h2>
+                        </div>
+                        <div class="cantidades">
+                            <button class="cantidad_medicamento">
+                                <h3>Medicamentos: 30</h3>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            </div>
+        </div>
+
+</body>
+</html>
