@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crear Historial de Producto</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f7f9fc;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .form-container {
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 0 15px rgba(0,0,0,0.2);
+            width: 100%;
+            max-width: 600px;
+        }
+        h1 {
+            margin-bottom: 20px;
+            font-size: 28px;
+            color: #333;
+            text-align: center;
+            font-weight: 600;
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+            color: #555;
+        }
+        .form-group input {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-size: 16px;
+            box-sizing: border-box;
+        }
+        .form-group input[type="submit"] {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            cursor: pointer;
+            font-size: 18px;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+        }
+        .form-group input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+        .form-group input[type="submit"]:active {
+            background-color: #004080;
+        }
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <h1>Crear Historial de Producto</h1>
+        <form action="ruta_del_script_de_backend" method="POST">
+            <div class="form-group">
+                <label for="detail">Detalle:</label>
+                <input type="text" id="detail" name="detail" required>
+            </div>
+            <div class="form-group">
+                <label for="exitdocument">Documento de Salida:</label>
+                <input type="text" id="exitdocument" name="exitdocument" required>
+            </div>
+            <div class="form-group">
+                <label for="entryamount">Cantidad de Entrada:</label>
+                <input type="number" id="entryamount" name="entryamount" required>
+            </div>
+            <div class="form-group">
+                <label for="outputamount">Cantidad de Salida:</label>
+                <input type="number" id="outputamount" name="outputamount" required>
+            </div>
+            <div class="form-group">
+                <label for="debit">Débito:</label>
+                <input type="number" id="debit" name="debit" step="0.01" required>
+            </div>
+            <div class="form-group">
+                <label for="credit">Crédito:</label>
+                <input type="number" id="credit" name="credit" step="0.01" required>
+            </div>
+            <div class="form-group">
+                <label for="codprod">Código de Producto:</label>
+                <input type="number" id="codprod" name="codprod" required>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Crear Historial">
+            </div>
+        </form>
+    </div>
+</body>
+</html>

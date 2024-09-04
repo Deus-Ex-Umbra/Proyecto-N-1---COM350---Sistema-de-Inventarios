@@ -77,41 +77,53 @@ function enviarFormularioSendFuncion(_idformulario, _archivo, _javascript) {
     ajax.send(new FormData(document.getElementById(_idformulario)));
 }
 
-function cargarInventarios() {
-    cargarEnElemento("inventory", `../php/clean.php`);
-    cargarEnElemento("inventory", "../php/inventory.php");
+
+function cargarItemsPorProducto(_idproducto, _codeinv) {
+    var ajax = new XMLHttpRequest();
+    ajax.open("POST", "../php/viewitem.php?code_prod=" + _idproducto + "&code_inv=" + _codeinv, true);
+    ajax.onreadystatechange = function() {
+        if (ajax.readyState == 4 && ajax.status) {
+            document.getElementById("t" + _idproducto).innerHTML = ajax.responseText;
+        }
+    }
+    ajax.send();
 }
 
-function cargarProductos(_idelemento) {
-    mostrarCargando(_idelemento);
-    cargarEnElemento("inventory", `../php/clean.php`);
-    cargarEnElemento("inventory", `../php/product.php?code_inv=${_idelemento}`);
+
+
+function incrementAmount(button) {
+    let amountSpan = button.closest('.total-amount').querySelector('.amount-value');
+    let currentAmount = parseInt(amountSpan.textContent);
+    amountSpan.textContent = currentAmount + 1;
+    showConfirmButtons(button);
 }
 
-function cargarItem(_idelemento) {
-    const divID = `t${_idelemento}`;
-    const divElement = document.getElementById(divID);
-    divElement.style.display = 'block'; 
-    divElement.style.height = 'opx';
-    if (divElement.innerHTML.trim() !== "") {
-        divElement.innerHTML = "";
-        divElement.style.display = "none";
-    } else {
-        divElement.style.display = "block";
-        mostrarCargando(divID);
-        cargarEnElementoFetch(divID, `../php/item.php?code_prod=${_idelemento}`);
+function decrementAmount(button) {
+    let amountSpan = button.closest('.total-amount').querySelector('.amount-value');
+    let currentAmount = parseInt(amountSpan.textContent);
+    if (currentAmount > 0) {
+        amountSpan.textContent = currentAmount - 1;
+        showConfirmButtons(button);
     }
 }
 
+function showConfirmButtons(button) {
+    let confirmButtons = button.closest('.total-amount').querySelector('.confirm-buttons');
+    confirmButtons.style.display = 'block';
+}
 
-function eliminarItem(_iditem, _idproducto) {
-    mostrarCargando(`t${_idproducto}`);
-    fetch(`../php/deleteitem.php?code_item=${_iditem}&code_prod=${_idproducto}`)
-        .then((response) => response.text())
-        .then(() => {
-            cargarEnElementoFetch(`t${_idproducto}`, `../php/item.php?code_prod=${_idproducto}`);
-        });
+function cancelChange(button) {
+    let totalAmountCell = button.closest('.total-amount');
+    let originalAmount = totalAmountCell.getAttribute('data-original-amount');
+    let amountSpan = totalAmountCell.querySelector('.amount-value');
+    amountSpan.textContent = originalAmount;
+    let confirmButtons = totalAmountCell.querySelector('.confirm-buttons');
+    confirmButtons.style.display = 'none';
 }
 
 
-cargarEnElemento("inventory", "../php/inventory.php");
+function confirmChange(button, codeItem, codeinv) {
+    let totalAmountCell = button.closest('.total-amount');
+    let newAmount = totalAmountCell.querySelector('.amount-value').textContent;
+    window.location.href = `updatequantityitem.php?code_item=${codeItem}&new_amount=${newAmount}&code_inv=${codeinv}`;
+}

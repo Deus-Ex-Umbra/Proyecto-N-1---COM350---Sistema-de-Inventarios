@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modificar Inventario</title>
+</head>
+
+<body>
+    <div class="form-container">
+        <h2>Modificar Inventario</h2>
+        <form action="../php/updateinventory.php" method="POST" enctype="multipart/form-data">
+            <div class="form-group">
+                <label for="code">Código del Inventario</label>
+                <input type="number" id="code" name="CODEINV" placeholder="Código del Inventario" readonly>
+            </div>
+            <div class="form-group">
+                <label for="name">Nombre del Inventario</label>
+                <input type="text" id="name" name="NAMEINV" placeholder="Nombre del Inventario">
+            </div>
+            <div class="form-group">
+                <label for="description">Descripción</label>
+                <input type="text" id="description" name="DESCRIPTIONINV" placeholder="Descripción del Inventario">
+            </div>
+            <div class="form-group">
+                <label for="ubication">Ubicación</label>
+                <input type="text" id="ubication" name="UBICATIONINV" placeholder="Ubicación del Inventario">
+            </div>
+            <div class="form-group">
+                <label for="photo">Foto del Inventario</label>
+                <label for="photo" class="upload-label">
+                    <i class="fa-solid fa-image"></i>
+                    <span>Haz clic para cambiar la imagen</span>
+                </label>
+                <input type="file" id="photo" name="PHOTOINV" accept="image/*">
+            </div>
+            <div class="form-group">
+                <button type="submit">Guardar Cambios</button>
+            </div>
+        </form>
+    </div>
+
+    <script>
+        const fileInput = document.getElementById('photo');
+        const label = document.querySelector('.upload-label span');
+
+        fileInput.addEventListener('change', function () {
+            if (fileInput.files.length > 0) {
+                label.textContent = fileInput.files[0].name;
+            } else {
+                label.textContent = 'Haz clic para cambiar la imagen';
+            }
+        });
+    </script>
+</body>
+
+</html>
