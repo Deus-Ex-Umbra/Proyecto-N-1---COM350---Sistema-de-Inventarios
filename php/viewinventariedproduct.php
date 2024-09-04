@@ -1,7 +1,7 @@
 <?php
     include("connection.php");
     $code_prod = $_GET["code_prod"];
-    $query = "SELECT * FROM HISTORYPRODUCTBYPRODUCT WHERE CODPROD = $code_prod;";
+    $query = "SELECT * FROM HISTORYINVENTORYBYPRODUCT WHERE CODINV = $code_prod;";
     $result = mysqli_query($connection, $query);
 ?>
 <h2>Tarjeta de Control Físico y Valorado - PEPS</h2>
@@ -13,12 +13,14 @@
             <th rowspan="2">Detalle</th>
             <th rowspan="2">Factura N. Salida</th>
             <th colspan="3">Cantidad Física</th>
-            <th colspan="4">Costos</th>
+            <th colspan="5">Costos</th>
         </tr>
         <tr>
             <th>Entrada</th>
             <th>Salida</th>
             <th>Saldo</th>
+            <th>C. Unit.</th>
+            <th>Compra</th>
             <th>Débito</th>
             <th>Crédito</th>
             <th>Saldo</th>

@@ -127,3 +127,4 @@ function confirmChange(button, codeItem, codeinv) {
     let newAmount = totalAmountCell.querySelector('.amount-value').textContent;
     window.location.href = `updatequantityitem.php?code_item=${codeItem}&new_amount=${newAmount}&code_inv=${codeinv}`;
 }
+

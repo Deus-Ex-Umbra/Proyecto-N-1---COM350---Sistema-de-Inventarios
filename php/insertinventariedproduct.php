@@ -6,8 +6,8 @@
     $query = "CALL CREATEHISTORYPRODUCT('".$detail."', '".$exitdocument."', ".$code_prod.");";
     $result = mysqli_query($connection, $query);
     if ($result) {
-        echo "<script>alert('Inventariado correctamente.'); window.location.href='../php/viewinventariedproduct.php?code_prod=$code_prod';</script>";
+        echo "<script>alert('Inventariado correctamente.'); window.location.href='../php/viewinventariedinventory.php?code_prod=$code_prod';</script>";
     } else {
-        echo "<script>alert('Error al inventariar: " . mysqli_error($connection) . "'); window.location.href='../php/viewinventariedproduct.php?code_prod=$code_prod';</script>";
+        echo "<script>alert('Error al inventariar: " . mysqli_error($connection) . "'); window.location.href='../php/viewinventariedinventory.php?code_prod=$code_prod';</script>";
     }
 ?>
